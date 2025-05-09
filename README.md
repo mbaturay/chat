@@ -1,6 +1,6 @@
 # OpenAI Chat Application
 
-A modern chat application built with React, Vite, and Tailwind CSS that integrates with the OpenAI API. This app features a ChatGPT-like interface with real-time streaming responses.
+A modern chat application built with React, Vite, and Bootstrap that integrates with the OpenAI API. This app features a ChatGPT-like interface with real-time streaming responses and improved accessibility through better contrast ratios.
 
 ![Chat Application](/public/app-screenshot.png)
 
@@ -13,10 +13,26 @@ A modern chat application built with React, Vite, and Tailwind CSS that integrat
 - 📝 Markdown and code formatting support
 - 🔄 Auto-expanding input field
 - 🔍 Suggested prompts for new chats
+- ♿ Improved accessibility with better contrast ratios
+- 🌙 Dark mode with readable text
+
+## Accessibility Improvements
+
+This application includes several accessibility improvements:
+- Enhanced contrast ratios for text on dark backgrounds
+- Better visibility for code blocks and inline code
+- Improved focus styles for keyboard navigation
+- ARIA labels for interactive elements
+- Screen reader text for better accessibility
+- High-contrast focus indicators
 
 ## Setup
 
 1. Clone this repository
+   ```
+   git clone https://github.com/mbaturay/chat.git
+   cd chat
+   ```
 2. Install dependencies:
    ```
    npm install
@@ -48,9 +64,9 @@ A modern chat application built with React, Vite, and Tailwind CSS that integrat
 
 ## Technologies Used
 
-- **React 18** - Modern UI library
+- **React** - Modern UI library
 - **Vite** - Next-generation frontend tooling
-- **Tailwind CSS** - Utility-first CSS framework
+- **Bootstrap** - Popular CSS framework
 - **OpenAI API** - State-of-the-art AI models
 - **React Icons** - Popular icon library
 - **React Markdown** - Markdown rendering
