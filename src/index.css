@@ -1,0 +1,250 @@
+/* Import Bootstrap CSS (will be imported in main.jsx) */
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background-color: #202123;
+  color: #ECECF1;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #202123;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat Container */
+.chat-container {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Message Styling */
+.message {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin: 0.75rem 0;
+  max-width: 80%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-message {
+  background-color: #10a37f;
+  color: white;
+  margin-left: auto;
+  border-left: 4px solid #0D8D6A;
+  border-top-right-radius: 0;
+}
+
+/* Styling for assistant message backgrounds */
+.assistant-message {
+  background-color: #444654; /* Darker background for better contrast with light text */
+  color: #ECECF1; /* Light text color for better contrast on dark background */
+  margin-right: auto;
+  border-left: 4px solid #5c5e70;
+  border-top-left-radius: 0;
+}
+
+/* Special styles for content inside assistant messages that needs dark text */
+.assistant-message .text-dark {
+  color: #ECECF1 !important; /* Override Bootstrap's text-dark to ensure light text on dark bg */
+}
+
+/* For cases where we need dark text (on light backgrounds) */
+.assistant-message-light-bg {
+  background-color: #f8f9fa; 
+  color: #202123; 
+}
+
+/* Input Styling */
+.message-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #D1D5DB;
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+  color: #343541;
+}
+
+.message-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(29, 183, 142, 0.5);
+  border-color: transparent;
+}
+
+.send-button {
+  background-color: #10a37f;
+  color: white;
+  padding: 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.send-button:hover {
+  background-color: #0D8D6A;
+  transform: scale(1.05);
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.typing-indicator div {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(29, 183, 142, 0.7);
+  animation: bounce 1.4s infinite;
+}
+
+.typing-indicator div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { 
+    transform: translateY(0);
+  }
+  40% { 
+    transform: translateY(-6px);
+  }
+}
+
+/* Chat Window */
+.chat-window {
+  padding: 0;
+  height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #D1D5DB transparent;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #D1D5DB;
+  border-radius: 20px;
+}
+
+/* Other styles */
+.bg-dark {
+  background-color: #343541;
+}
+
+.bg-chatgpt-bg {
+  background-color: #202123;
+}
+
+.bg-chatgpt-hover {
+  background-color: #2A2B32;
+}
+
+.text-chatgpt-text {
+  color: #ECECF1;
+}
+
+/* Improved contrast for Bootstrap classes */
+.text-muted {
+  color: #b1b1b9 !important; /* Lighter than default text-muted for better contrast */
+}
+
+.border-r-gray-700 {
+  border-right-color: #374151;
+}
+
+.border-gray-700 {
+  border-color: #374151;
+}
+
+/* Accessibility helper classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Markdown content general styling */
+.markdown-content {
+  line-height: 1.6;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+}
+
+.markdown-content h1, 
+.markdown-content h2, 
+.markdown-content h3, 
+.markdown-content h4, 
+.markdown-content h5, 
+.markdown-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.markdown-content ul, 
+.markdown-content ol {
+  margin-bottom: 1rem;
+}
+
+.markdown-content blockquote {
+  padding-left: 1rem;
+  border-left: 4px solid #6c757d;
+  color: #b1b1b9;
+  margin-bottom: 1rem;
+}
+
+/* Fix for dark mode table styling in Bootstrap */
+.table-dark {
+  --bs-table-color: #ECECF1;
+  --bs-table-bg: #343541;
+  --bs-table-border-color: #495057;
+}
